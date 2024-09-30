@@ -28,9 +28,9 @@ environment:
 vars:
   name:
     type: string
-    description: Project name
+    description: Endpoint name
     default: Module
-    prompt: What is your project name?
+    prompt: What is your endpoint name?
   method:
     type: string
     description: Your method
