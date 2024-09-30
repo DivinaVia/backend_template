@@ -34,7 +34,7 @@ vars:
   method:
     type: string
     description: Your method
-    default: Module
+    default: GET
     prompt: What is your method (GET, POST, PUT, PATCH, DELETE)?
   path:
     type: string
