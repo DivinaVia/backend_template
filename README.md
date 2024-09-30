@@ -17,9 +17,9 @@ To use these Mason templates in your project, follow these steps:
 3. Add the templates from this repository to your project:
 
    ```bash
-   mason add body --git-url https://github.com/DivinaVia/backend_template.git --git-path body
-   mason add default --git-url https://github.com/DivinaVia/backend_template.git --git-path no_param
-   mason add param --git-url https://github.com/DivinaVia/backend_template.git --git-path param
+   mason add body --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/body
+   mason add default --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/no_param
+   mason add param --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/param
    ```
 
 4. After adding the templates, you can verify if they were installed correctly:

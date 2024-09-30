@@ -43,7 +43,6 @@ vars:
     prompt: What is your uri path? (e.g., /v1/cards)
   tag:
     type: string
-    description: Your path
     description: API tag for grouping endpoints
     default: General
     prompt: What is your tag eg. Card?
