@@ -44,5 +44,6 @@ vars:
   tag:
     type: string
     description: Your path
-    default: Module
+    description: API tag for grouping endpoints
+    default: General
     prompt: What is your tag eg. Card?
