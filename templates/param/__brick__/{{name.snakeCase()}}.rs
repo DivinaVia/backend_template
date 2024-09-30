@@ -46,12 +46,9 @@ struct Response{{name.pascalCase()}} {}
 
 #[endpoint(
     status_codes(200, 500, 401, 404, 400), 
-    // -> Body - JSON
-    // request_body=Request{{name.pascalCase()}},
-    // -> Parameters
-    // parameters(
-    //     ("event_id" = i32, Query, description = "O código do evento")
-    // ),
+    parameters(
+        ("{{parm}}" = i32, Query, description = "{{parm_description}}")
+    ),
     responses(
         (status_code = 200, response = Response{{name.pascalCase()}})
     ),
@@ -73,29 +70,16 @@ pub async fn execute(
     let connection_pool = DB_POOL.get().unwrap();
     let mongo_client = MONGO_POOL.get().unwrap();
 
-    // let body: RequestBody = match req
-    //     .extract()
-    //     .await
-    //     .map_err(|_| StatusError::bad_request().brief("Erro ao extrair corpo da requisição"))
-    // {
-    //     Ok(e) => e,
-    //     Err(err) => {
-    //         render_response_error(res, "{{name.snakeCase()}}_0002".to_string(), err.brief);
-    //         return Err(StatusCode::INTERNAL_SERVER_ERROR);
-    //     }
-    // };
-
-
-    // let event_id: i32 = match req
-    //     .query::<i32>("event_id")
-    //     .ok_or_else(|| StatusError::bad_request().brief("Missing parameter: event_id")) 
-    //     {
-    //     Ok(e) => e,
-    //         Err(err) => {
-    //             render_response_error(res, "items_0002".to_string(), err.brief);
-    //             return Err(StatusCode::INTERNAL_SERVER_ERROR);
-    //         }
-    //     };
+    let {{parm}}: i32 = match req
+        .query::<i32>("{{parm}}")
+        .ok_or_else(|| StatusError::bad_request().brief("Missing parameter: {{parm}}")) 
+        {
+        Ok(e) => e,
+            Err(err) => {
+                render_response_error(res, "{{name.snakeCase()}}_0002".to_string(), err.brief);
+                return Err(StatusCode::INTERNAL_SERVER_ERROR);
+            }
+        };
 
     render_response(res, json!({}));
     Ok(StatusCode::OK)
