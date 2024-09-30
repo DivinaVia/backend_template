@@ -1,4 +1,4 @@
-name: backend_template
+name: no_param_endpoint
 description: A new brick created with the Mason CLI.
 
 # The following defines the brick repository url.
@@ -28,21 +28,22 @@ environment:
 vars:
   name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: Endpoint name
+    default: Module
+    prompt: What is your endpoint name?
   method:
     type: string
     description: Your method
-    default: Dash
+    default: GET
     prompt: What is your method (GET, POST, PUT, PATCH, DELETE)?
   path:
     type: string
     description: Your path
-    default: Dash
-    prompt: What is your uri path eg. v1/card?
+    default: /v1/resource
+    prompt: What is your uri path? (e.g., /v1/cards)
   tag:
     type: string
     description: Your path
-    default: Dash
+    description: API tag for grouping endpoints
+    default: General
     prompt: What is your tag eg. Card?
