@@ -18,7 +18,7 @@ To use these Mason templates in your project, follow these steps:
 
    ```bash
    mason add body --git-url https://github.com/DivinaVia/backend_template.git --git-path body
-   mason add default --git-url https://github.com/DivinaVia/backend_template.git --git-path default
+   mason add default --git-url https://github.com/DivinaVia/backend_template.git --git-path no_param
    mason add param --git-url https://github.com/DivinaVia/backend_template.git --git-path param
    ```
 
@@ -28,14 +28,14 @@ To use these Mason templates in your project, follow these steps:
    mason list
    ```
 
-   You should see `body`, `default`, and `param` in the list of available templates.
+   You should see `body`, `no_param`, and `param` in the list of available templates.
 
 5. Now you can use the templates in your project. For example:
 
    ```bash
-   mason make body_backend
-   mason make default_backend
-   mason make param_backend
+   mason make body_endpoint
+   mason make no_param_endpoint
+   mason make param_endpoint
    ```
 
    Replace `example` with the desired name for your generated component or file.
