@@ -17,10 +17,30 @@ To use these Mason templates in your project, follow these steps:
 3. Add the templates from this repository to your project:
 
    ```bash
-   mason add body --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/body
-   mason add default --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/no_param
-   mason add param --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/param
+   mason add body_endpoint --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/body_endpoint
+   mason add no_param_endpoint --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/no_param_endpoint
+   mason add param_endpoint --git-url https://github.com/DivinaVia/backend_template.git --git-path templates/param_endpoint   
    ```
+
+   or adding in mason.yaml:  
+
+   ```yaml
+      body_endpoint:
+         git:
+            url: "https://github.com/DivinaVia/backend_template.git"
+            path: templates/body_endpoint
+      no_param_endpoint:
+         git:
+            url: "https://github.com/DivinaVia/backend_template.git"
+            path: templates/no_param_endpoint
+      param_endpoint:
+         git:
+            url: "https://github.com/DivinaVia/backend_template.git"
+            path: templates/param_endpoint
+   ```
+
+   and running `mason get` for install new templates
+
 
 4. After adding the templates, you can verify if they were installed correctly:
 
@@ -28,7 +48,7 @@ To use these Mason templates in your project, follow these steps:
    mason list
    ```
 
-   You should see `body`, `no_param`, and `param` in the list of available templates.
+   You should see `body_endpoint`, `no_param_endpoint`, and `param_endpoint` in the list of available templates.
 
 5. Now you can use the templates in your project. For example:
 
@@ -37,8 +57,6 @@ To use these Mason templates in your project, follow these steps:
    mason make no_param_endpoint
    mason make param_endpoint
    ```
-
-   Replace `example` with the desired name for your generated component or file.
 
 Note: If you make changes to the templates in the repository, users can update to the latest version using:
 
