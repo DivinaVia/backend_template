@@ -16,7 +16,7 @@ use salvo::http::StatusCode;
 /* -------------------------------------------------------------------------- */
 
 pub fn router() -> Router {
-    Router::with_path("{{path.pathCase()}}").{{method.lowerCase()}}(execute)
+    Router::with_path("{{path}}").{{method.lowerCase()}}(execute)
 }
 
 /* -------------------------------------------------------------------------- */
